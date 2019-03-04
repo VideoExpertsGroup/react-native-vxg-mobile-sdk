@@ -2,6 +2,10 @@
 #
 .DS_Store
 
+# no commit binaries
+ios/ffmpeg/*
+ios/libMediaPlayerSDK.a
+
 # Xcode
 #
 build/

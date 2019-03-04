@@ -1,6 +1,6 @@
 ## react-native-vxg-mobile-sdk
 
-A `<RCTVXGMobileSDK>` component for react-native
+A `<VXGMobileSDK>` component for react-native
 
 
 ## Installation
@@ -22,24 +22,24 @@ yarn add react-native-vxg-mobile-sdk
 
 Run `react-native link react-native-vxg-mobile-sdk` to link the library.
 
-Open your project in Xcode, and create link of ffmpeg.framework to Frameworks of main project:
+Open your project in Xcode and create a link of ffmpeg.framework to Frameworks of main project:
 
 <img src="./docs/img1_ffmpeg_include.png" width="40%">
 
 After that, select the target of your application and select 'General' tab.
-Scroll to 'Embeded libraries' and tap on the + button:
+Scroll to 'Embedded Binaries' and tap the '+' button:
 
-<img src="./docs/img2_embeded1.png" width="40%">
+<img src="./docs/img2_embedded1.png" width="100%">
 
-Tab on + and select "ffmpeg.framework" from a list:
+Select "ffmpeg.framework" from the list:
 
-<img src="./docs/img2_embeded2.png" width="40%">
+<img src="./docs/img2_embedded2.png" width="100%">
 
 After that, select 'Build Settings' tab.
-Find option 'Framework Search Path' double tap on this
-Tap again on the + button in dialog and enter path to framework:
+Find the option 'Framework Search Path' and double tap on it.
+Tap the '+' button in the dialog and enter path to framework:
 
-For support emulator
+For emulator:
 
 `$(PROJECT_DIR)/../node_modules/react-native-vxg-mobile-sdk/ios/ffmpeg/universal/`
 
@@ -47,7 +47,7 @@ For appstore:
 
 `$(PROJECT_DIR)/../node_modules/react-native-vxg-mobile-sdk/ios/ffmpeg/appstore/`
 
-<img src="./docs/img3_framework_search_paths.png" width="40%">
+<img src="./docs/img3_framework_search_paths.png" width="100%">
 
 </details>
 
@@ -67,33 +67,22 @@ For appstore:
 // Within your render function, assuming you have a file called
 import React, { Component } from 'react';
 import { StyleSheet, Button, Text, View } from 'react-native';
-import { RCTVXGMobileSDK } from 'react-native-vxg-mobile-sdk';
-import { Actions } from 'react-native-router-flux';
+import { VXGMobileSDK } from 'react-native-vxg-mobile-sdk';
 
 export default class SimplePlayerScreen extends Component {
     _url = null;
     constructor() {
       super();
       this._url = 'rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov';
-      this._onBack = this._onBack.bind(this);
-    }
-    
-    _onBack = () => {
-        Actions.pop();
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Button
-                    onPress={this._onBack} 
-                    title="Back"
-                    color="#841584"
-                />
                 <Text>Example 1: Simple Player</Text>
-                <RCTVXGMobileSDK 
+                <VXGMobileSDK 
                     style={styles.player}
-                    url={this._url}></RCTVXGMobileSDK>
+                    config={{"connectionUrl": this._url, "autoplay": true}}></VXGMobileSDK>
             </View>
         );
     }
