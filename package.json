@@ -1,7 +1,7 @@
 {
   "name": "react-native-vxg-mobile-sdk",
-  "version": "0.0.1",
-  "description": "React Native Router using Flux architecture",
+  "version": "0.0.3",
+  "description": "React Native VXG Mobile SDK",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/videoexpertsgroup/react-native-vxg-mobile-sdk.git"
@@ -10,9 +10,9 @@
   "license": "Commertial",
   "main": "src/index.js",
   "dependencies": {
-    "react": "16.6.3",
+    "react": "^16.6.3",
     "prop-types": "^15.6.2",
-    "react-native": "0.58.5"
+    "react-native": "^0.58.5"
   },
   "bundleDependecies": false,
   "deprecated": false,
@@ -20,12 +20,14 @@
     "name": "VXG Inc."
   },
   "bugs": {
-    "url": "https://some.com/issues"
+    "url": "https://github.com/videoexpertsgroup/react-native-vxg-mobile-sdk/issues"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "video",
+    "vxg"
   ],
-  "pearDependencies": {
+  "peerDependencies": {
     "react-native": "^0.52.0"
   }
 }
