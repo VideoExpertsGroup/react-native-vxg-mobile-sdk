@@ -1,5 +1,7 @@
 ## react-native-vxg-mobile-sdk
 
+Please visit www.videoexpertsgroup.com for any additional questions and support. 
+
 A `<VXGMobileSDK>` component for react-native
 
 
