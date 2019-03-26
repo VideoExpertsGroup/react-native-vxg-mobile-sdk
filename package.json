@@ -25,7 +25,15 @@
   "keywords": [
     "react-native",
     "video",
-    "vxg"
+    "vxg",
+    "video-player",
+    "video-playback",
+    "rtsp",
+    "android",
+    "ios",
+    "media-player",
+    "playback-streams",
+    "player-sdk"
   ],
   "peerDependencies": {
     "react-native": "^0.52.0"
