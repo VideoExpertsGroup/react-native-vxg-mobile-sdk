@@ -6,6 +6,11 @@
 ios/ffmpeg/*
 ios/libMediaPlayerSDK.a
 
+# VSC
+#
+.project
+.settings
+
 # Xcode
 #
 build/
