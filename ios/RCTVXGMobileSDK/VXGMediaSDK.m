@@ -6,6 +6,7 @@
 #import <React/RCTComponent.h>
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventDispatcher.h>
+#import <React/RCTLog.h>
 
 @implementation VXGMediaSDK
 {
@@ -47,46 +48,65 @@
 
     if ([cnf objectForKey:@"connectionUrl"]) {
         _config.connectionUrl = [cnf objectForKey:@"connectionUrl"];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: connectionUrl = %@", _config.connectionUrl];
+        RCTLogInfo(toLog);
     }
 
     // HW – 1 //SW – 0
     if ([cnf objectForKey:@"decodingType"]) {
         _config.decodingType = [[cnf objectForKey:@"decodingType"] intValue];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: decodingType = %i", _config.decodingType];
+        RCTLogInfo(toLog);
     }
 
     if ([cnf objectForKey:@"connectionNetworkProtocol"]) {
         _config.connectionNetworkProtocol = [[cnf objectForKey:@"connectionNetworkProtocol"] intValue];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: connectionNetworkProtocol = %i", _config.connectionNetworkProtocol];
+        RCTLogInfo(toLog);
     }
 
     if ([cnf objectForKey:@"numberOfCPUCores"]) {
         _config.numberOfCPUCores = [[cnf objectForKey:@"numberOfCPUCores"] intValue];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: numberOfCPUCores = %i", _config.numberOfCPUCores];
+        RCTLogInfo(toLog);
     }
 
     if ([cnf objectForKey:@"synchroEnable"]) {
         _config.synchroEnable = [[cnf objectForKey:@"synchroEnable"] intValue];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: synchroEnable = %i", _config.synchroEnable];
+        RCTLogInfo(toLog);
     }
 
     if ([cnf objectForKey:@"connectionBufferingTime"]) {
         _config.connectionBufferingTime = [[cnf objectForKey:@"connectionBufferingTime"] intValue];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: connectionBufferingTime = %i", _config.connectionBufferingTime];
+        RCTLogInfo(toLog);
     }
     
     if ([cnf objectForKey:@"connectionDetectionTime"]) {
         _config.connectionBufferingTime = [[cnf objectForKey:@"connectionDetectionTime"] intValue];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: connectionDetectionTime = %i", _config.connectionDetectionTime];
+        RCTLogInfo(toLog);
     }
 
     if ([cnf objectForKey:@"startPreroll"]) {
         _config.startPreroll = [[cnf objectForKey:@"startPreroll"] intValue];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: startPreroll = %i", _config.startPreroll];
+        RCTLogInfo(toLog);
     }
 
     if ([cnf objectForKey:@"aspectRatioMode"]) {
         _config.aspectRatioMode =  [[cnf objectForKey:@"aspectRatioMode"]  intValue];
+        NSString *toLog = [NSString stringWithFormat:@"VXGMediaSDK: aspectRatioMode = %i", _config.aspectRatioMode];
+        RCTLogInfo(toLog);
     }
 
     if ([cnf objectForKey:@"autoplay"]) {
-      BOOL bAutoplay = [[cnf objectForKey:@"autoplay"] boolValue];
-      if (bAutoplay == TRUE) {
-        [self openSync];
-      }
+        BOOL bAutoplay = [[cnf objectForKey:@"autoplay"] boolValue];
+        if (bAutoplay == TRUE) {
+            RCTLogInfo(@"VXGMediaSDK: autoplay enabled");
+            [self openSync];
+        }
     }
 }
 

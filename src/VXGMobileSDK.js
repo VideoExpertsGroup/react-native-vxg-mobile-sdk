@@ -48,9 +48,16 @@ VXGMobileSDK.propTypes = {
     config: PropTypes.oneOfType([
         PropTypes.shape({
             connectionUrl: PropTypes.string,
+            decodingType: PropTypes.number, // HW – 1 //SW – 0
+            connectionNetworkProtocol: PropTypes.number,
+            numberOfCPUCores: PropTypes.number,
+            synchroEnable: PropTypes.number,
+            connectionBufferingTime: PropTypes.number,
+            connectionDetectionTime: PropTypes.number,
+            startPreroll: PropTypes.number,
+            aspectRatioMode: PropTypes.number,
+            autoplay: PropTypes.boolean,
         }),
-        PropTypes.number,
-        PropTypes.boolean,
     ]),
     close: PropTypes.func,
     open: PropTypes.func,

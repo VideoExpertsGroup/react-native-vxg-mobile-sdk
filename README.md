@@ -4,6 +4,7 @@ Please visit www.videoexpertsgroup.com for any additional questions and support.
 
 A `<VXGMobileSDK>` component for react-native
 
+*Notice: If you download version from github please look file BINARIES.md*
 
 ## Installation
 
@@ -108,6 +109,18 @@ const styles = StyleSheet.create({
 
 ## Change Config in Runtime
 
+* *connectionUrl* - Network protocol or RTP/RTSP tunneling (0 – RTP by UDP, 1 – RTP by TCP, 2 – RTSP over http, 3 – RTSP over https, -1 - AUTO)
+* *decodingType* 1 - use hardware decoder or 0 - sofware decoder |
+* *connectionNetworkProtocol* - Network protocol or RTP/RTSP tunneling (0 – RTP by UDP, 1 – RTP by TCP, 2 – RTSP over http, 3 – RTSP over https, -1 - AUTO)
+* *numberOfCPUCores* - Number of CPU cores to decode video, ≤ 0 – autodetect and set the number according device capability, positive number sets number according application needs |
+* *synchroEnable* - Enable A/V synchronization, 1 - synchronization is on, 0 - is off
+* *connectionBufferingTime* - Buffering on playback start to avoid network jitter (in milliseconds)
+* *connectionDetectionTime* - Probing time to detect video and audio formats of network stream (in milliseconds)
+* *startPreroll* - Start player in Paused mode (in milliseconds)
+* *aspectRatioMode* - 0 - stretch, 1 - fit to screen with aspect ratio, 2 - crop, 3 - 100% size, 4 - zoom mode, 5 - move mode)
+
+
+
 ```javascript
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
@@ -130,11 +143,11 @@ export default class MoreOptionsPlayerScreen extends Component {
             "decodingType": 0, // Hardware – 1, Sofware – 0
             "connectionNetworkProtocol": -1, // 0 - udp, 1 - tcp, 2 - http, 3 - https, -1 - AUTO
             "numberOfCPUCores": 0, // 0<= - autodetect, > 0 - will set manually
-            "synchroEnable": 1,
+            "synchroEnable": 1, // Enable A/V synchronization, 1 - synchronization is on, 0 - is off
             "connectionBufferingTime": 1000,
             "connectionDetectionTime":  1000,
             "startPreroll": 300,
-            "aspectRatioMode": 1
+            "aspectRatioMode": 1 // 0 - stretch, 1 - fit to screen with aspect ratio, 2 - crop, 3 - 100% size, 4 - zoom mode, 5 - move mode)
         });
         await this._player.open();
     }
