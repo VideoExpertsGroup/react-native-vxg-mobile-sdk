@@ -29,7 +29,7 @@ export default class VXGMobileSDK extends Component {
     applyConfig = async (cnf) => {
         await NativeModules.VXGMobileSDKManager.applyConfig(cnf, findNodeHandle(this._root));
     }
-    
+
     _assignRoot = (rt) => {
         this._root = rt;
     }
@@ -37,12 +37,11 @@ export default class VXGMobileSDK extends Component {
     render() {
         return (
             <View style={{backgroundColor: 'black' }}>
-                <Text style={{backgroundColor: 'white' }}>RCTVXGMobileSDK native component here:</Text>
                 <RCTVXGMobileSDK ref={this._assignRoot} {...this.props}/>
             </View>
         );
     }
-} 
+}
 
 VXGMobileSDK.propTypes = {
     config: PropTypes.oneOfType([
