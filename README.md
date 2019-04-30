@@ -42,13 +42,13 @@ After that, select 'Build Settings' tab.
 Find the option 'Framework Search Path' and double tap on it.
 Tap the '+' button in the dialog and enter path to framework:
 
-For emulator:
+For Device Simulator:
 
 `$(PROJECT_DIR)/../node_modules/react-native-vxg-mobile-sdk/ios/ffmpeg/universal/`
 
-For appstore:
+Or for appstore:
 
-`$(PROJECT_DIR)/../node_modules/react-native-vxg-mobile-sdk/ios/ffmpeg/appstore/`
+`$(PROJECT_DIR)/../node_modules/react-native-vxg-mobile-sdk/ios/ffmpeg/applestore/`
 
 <img src="./docs/img3_framework_search_paths.png" width="100%">
 
